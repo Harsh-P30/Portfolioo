@@ -1,21 +1,26 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: white;
 }
+
 @font-face {
     font-family: myfont;
     src: url(WinkyRough-VariableFont_wght.ttf);
 }
+
 @font-face {
     font-family: special;
     src: url(SpecialGothicExpandedOne-Regular.ttf);
 }
-body ,head{
-    background-color: black; 
+
+body,
+head {
+    background-color: black;
 }
-nav{
+
+nav {
     height: 100%;
     width: 100%;
     display: flex;
@@ -24,22 +29,24 @@ nav{
     padding: 1vw 5vw;
 }
 
-nav .logo img{
+nav .logo img {
     height: 100px;
     width: 100px;
     transition: filter 0.1s ease;
 }
 
-nav .logo img:hover{
+nav .logo img:hover {
     filter: drop-shadow(0 0 10px #f88f49);
 }
-nav .pagesLink ul{
+
+nav .pagesLink ul {
     display: flex;
     gap: 5vw;
     list-style-type: none;
     padding: 0;
 }
-nav .pagesLink ul li a{
+
+nav .pagesLink ul li a {
     color: white;
     text-decoration: none;
     font-family: myfont;
@@ -48,7 +55,8 @@ nav .pagesLink ul li a{
     position: relative;
     display: inline-block;
 }
-nav .pagesLink ul li a::after{
+
+nav .pagesLink ul li a::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -59,10 +67,12 @@ nav .pagesLink ul li a::after{
     transition: width 0.5s ease-in;
     background-color: #CE7A42;
 }
-nav .pagesLink ul li a:hover::after{
+
+nav .pagesLink ul li a:hover::after {
     width: 100%;
 }
-nav .hireMe button{
+
+nav .hireMe button {
     padding: .6vw 2vw;
     font-size: 1.2vw;
     font-family: myfont;
@@ -70,11 +80,13 @@ nav .hireMe button{
     border-radius: 1vw;
     background-color: #1b1917;
 }
-nav .hireMe button span{
+
+nav .hireMe button span {
     color: red;
     font-weight: bolder;
 }
-.hero{
+
+.hero {
     width: 100%;
     height: 100%;
     display: flex;
@@ -83,25 +95,28 @@ nav .hireMe button span{
     align-items: center;
     position: static;
 }
-.hero .hero-image{
+
+.hero .hero-image {
     display: flex;
     flex-direction: column;
     position: relative;
     bottom: 10px;
 }
-.hero .hero-image img{
+
+.hero .hero-image img {
     height: 600px;
     transform: scaleX(-1);
 }
 
-.hero .intro{
+.hero .intro {
     padding-left: 10vw;
-    font-family:Arial, Helvetica, sans-serif;
-    line-height:1.2;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2;
     font-size: 1.5pc;
-   
+
 }
-.hero .intro span{
+
+.hero .intro span {
     font-weight: bold;
     color: red;
     position: relative;
@@ -109,11 +124,12 @@ nav .hireMe button span{
 }
 
 .hero .intro span {
-    position: relative; /* Needed for ::after to be positioned correctly */
+    position: relative;
+    /* Needed for ::after to be positioned correctly */
     display: inline-block;
-  }
-  
-  .hero .intro span::after {
+}
+
+.hero .intro span::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -121,63 +137,109 @@ nav .hireMe button span{
     height: 30px;
     width: 30px;
     border-radius: 50vw;
-    background-image: url('rocket.png'); /* Corrected path */
+    background-image: url('rocket.png');
+    /* Corrected path */
     background-size: cover;
     background-repeat: no-repeat;
     animation: underline 5s ease forwards;
     transform: rotate(45deg);
-  }
-  
-  @keyframes underline {
-    to {
-      left: 280px;
-      transform: translateX(100%) rotate(0deg);
-    }
-  }
-  
+}
 
-.hero .intro button{
+@keyframes underline {
+    to {
+        left: 280px;
+        transform: translateX(100%) rotate(0deg);
+    }
+}
+
+
+.hero .intro button {
     margin: 2pc 0px 0px 0px;
     padding: 1vw 2vw;
     background-color: rgb(82, 228, 82);
     border: none;
-    border-radius:1pc;
+    border-radius: 1pc;
     font-size: 1vw;
     font-family: myfont;
     color: blue;
 }
 
-.skill_outbox{
+.skill_outbox {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     padding: 0px 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
-}
-.skill{
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    grid-template-rows: repeat(2,auto);
-    gap: 20px;
-    background-color: #fff;
+
 }
 
-.skill .skill_card{
+.skill {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 5vw 12vw;
+    margin-top: 20px;
+}
+
+.skill #cpp_card {
+    background-image: url(./skill_card/cpp.jpg);
+}
+
+.skill #javaScript_card {
+    background-image: url(./skill_card/js.png);
+}
+
+.skill #sql_card {
+    background-image: url(./skill_card/sql.png);
+}
+
+.skill #html_card {
+    background-image: url(./skill_card/html.png);
+}
+
+.skill #css_card {
+    background-image: url(./skill_card/css.jpg);
+}
+
+.skill #figma_card {
+    background-image: url(./skill_card/figma.jpg);
+}
+
+.skill #python_card {
+    background-image: url(./skill_card/python.png);
+}
+
+.skill #gitGithub_card {
+    background-image: url(./skill_card/github.jpg);
+    height: 100px;
+}
+
+.skill #bootstrap_card {
+    background-image: url(./skill_card/bootstrap.jpg);
+}
+
+.skill #react_card {
+    background-image: url(./skill_card/react.jpg);
+}
+
+.skill #tailwindCss_card {
+    background-image: url(./skill_card/tailwind.webp);
+}
+
+.skill .skill_card {
     height: 100px;
     width: 100px;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url(./skill_card/html.png);
-}
-
-/* .skill .cpp_card{
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
     transition: filter 0.1s ease;
 }
 
-.skill .cpp_card:hover{
-    filter: drop-shadow(0 0 10px #f88f49);
-} */
+.skill .skill_card:hover {
+    transform: rotateY(10deg) rotateX(10deg);
+    filter: drop-shadow(0 0 10px #ffffff);
+}
