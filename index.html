@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harsh Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
     <link rel="icon" href="ChatGPT Image Apr 12, 2025, 08_42_22 PM.png">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+        integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+        integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js" defer></script>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <script src="script.js" defer></script>
+
 </head>
+
 <body>
     <nav>
-        <div class="logo"><img src="ChatGPT Image Apr 12, 2025, 08_42_22 PM.png" alt=""></div>
+        <div class="logo"><img src="/img/logo.png" alt=""></div>
         <div class="pagesLink">
             <ul>
                 <li><a href="#skill_outbox">Skills</a></li>
@@ -22,18 +38,31 @@
         <div class="hireMe"><button type="button">Hire Me <span>!</span></button></div>
     </nav>
     <div class="hero">
+
         <div class="intro">
-            <h1 id="name">I'm <span>Harsh Prasad,</span> a </h1> <h1></h1> Front-end Developer</h1>
+            <h1 id="name">I'm <span>Harsh Prasad</span> </h1><span><img src="img/Transhumans - Astro.png" alt=""></span>
+            <h1><span>A</span> Front-end Developer</h1>
             <p>I design web apps to turn your ideas into reality. </p>
-            <button type="button">Get in touch</button>
+            <div class="typewriter">
+                <div class="slide"><i></i></div>
+                <div class="paper"></div>
+                <div class="keyboard"></div>
+            </div>
         </div>
 
-        <div class="hero-image">
-            <img src="Transhumans - Astro.png" alt="">
-        </div>
+        <!-- <div class="hero-image">
+            <img id="heroLogo" src="meh.png" alt="">
+        </div> -->
+
+
     </div>
 
     <div class="skill_outbox" id="skill_outbox">
+
+        <div>
+            <img src="img/boy.png" alt="">
+        </div>
+
         <div class="skill">
             <div id="cpp_card" class="skill_card"></div>
             <div id="javaScript_card" class="skill_card"></div>
@@ -49,19 +78,64 @@
         </div>
     </div>
 
+    <section id="project">
 
-    <div class="education-section-outer">
-        <div class="education-section">
-            <div id="tenth" class="edu_class">
-                <h1>10<sup>th</sup></h1>
-            </div>
-            <div id="twelth" class="edu_class">
-                <h1>12<sup>th</sup></h1>
-            </div>
-            <div id="graduation" class="edu_class">
-                <h1>Graduation</h1>
+        <div class="card" id="card1">
+            <div class="text">
+                <h1>TBPC</h1>
+                <p>Designed and developed a fully responsive e-commerce platform from scratch using React, Tailwind
+                    CSS,
+                    and TypeScript. Implemented a modern and accessible UI with Shadcn UI components. Used Redux for
+                    efficient global state management and integrated Jest for unit testing to ensure code
+                    reliability.
+                    The project features product listing, filtering, shopping cart functionality, and a
+                    user-friendly
+                    layout. Focused on clean code, modular structure, and scalability for real-world use cases.
+
+                </p>
             </div>
         </div>
+        <div class="card" id="card2">
+            <div class="text">
+                <h1>TBPC</h1>
+                <p>Designed and developed a fully responsive e-commerce platform from scratch using React, Tailwind
+                    CSS,
+                    and TypeScript. Implemented a modern and accessible UI with Shadcn UI components. Used Redux for
+                    efficient global state management and integrated Jest for unit testing to ensure code
+                    reliability.
+                    The project features product listing, filtering, shopping cart functionality, and a
+                    user-friendly
+                    layout. Focused on clean code, modular structure, and scalability for real-world use cases.
+
+                </p>
+            </div>
+        </div>
+
+        <div class="card" id="card3">
+            <div class="text">
+                <h1>TBPC</h1>
+                <p>Designed and developed a fully responsive e-commerce platform from scratch using React, Tailwind
+                    CSS,
+                    and TypeScript. Implemented a modern and accessible UI with Shadcn UI components. Used Redux for
+                    efficient global state management and integrated Jest for unit testing to ensure code
+                    reliability.
+                    The project features product listing, filtering, shopping cart functionality, and a
+                    user-friendly
+                    layout. Focused on clean code, modular structure, and scalability for real-world use cases.
+
+                </p>
+            </div>
+        </div>
+
+
+
+    </section>
+
+    <div class="dance">
+        <img src="/img/funny_dancing_render.gif" alt="">
     </div>
+
+
 </body>
+
 </html>

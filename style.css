@@ -21,25 +21,28 @@ head {
 }
 
 nav {
-    height: 100%;
+    height: auto;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1vw 5vw;
-    position: static;
+    padding: 0 5vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 99;
 }
 
 nav .logo img {
-    height: 130px;
-    width: 130px;
+    height: 100%;
+    width: 120px;
     transition: filter 0.1s ease;
-    /* margin-top: 10px; */
     position: relative;
     bottom: 20px;
     right: 20px;
     filter: drop-shadow(0 0 10px rgb(255, 0, 0));
-    
+
 }
 
 nav .logo img:hover {
@@ -51,6 +54,7 @@ nav .pagesLink ul {
     gap: 5vw;
     list-style-type: none;
     padding: 0;
+
 }
 
 nav .pagesLink ul li a {
@@ -84,26 +88,33 @@ nav .hireMe button {
     font-size: 1.2vw;
     font-family: myfont;
     border: none;
+    color: white;
     border-radius: 4px;
     background-color: #1b1917;
-    animation: glow 2s infinite;
     border: 2px solid white;
+    animation: glow 2s infinite;
 }
+
 @keyframes glow {
+
     /* #0ff */
     0% {
-      box-shadow: 0 0 5px white, 0 0 10px white;
+        box-shadow: 0 0 5px white, 0 0 10px white;
     }
+
     50% {
-      box-shadow: 0 0 15px white, 0 0 30px white;
+        box-shadow: 0 0 15px white, 0 0 30px white;
     }
+
     100% {
-      box-shadow: 0 0 5px white, 0 0 10px white;
+        box-shadow: 0 0 5px white, 0 0 10px white;
     }
-  }
-nav .hireMe button:hover{
-    background-image: linear-gradient(to right, rgb(251, 100, 100),#09256E);
-    box-shadow: none;
+}
+
+nav .hireMe button:hover {
+    background-image: linear-gradient(to right, rgb(251, 100, 100), #09256E);
+    box-shadow: 0 0 5px white, 0 0 10px white;
+    animation: none;
 }
 
 nav .hireMe button span {
@@ -113,50 +124,38 @@ nav .hireMe button span {
 
 .hero {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
-    padding: 0vw 4vw;
+    justify-content: center;
+    padding: 0vw 2rem;
     align-items: center;
     position: static;
-}
-
-.hero .hero-image {
-    position: relative;
-}
-
-.hero .hero-image img {
-    display: flex;
-    justify-content: baseline;
-    height: 600px;
-    transform: scaleX(-1);
-    filter: drop-shadow(0 0 100px #5c5656);
-    position: relative;
-    top: 30px;
+    margin-top: 86px;
 }
 
 .hero .intro {
-    padding-left: 10vw;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.2;
-    font-size: 1.5pc;
+    font-size: 2em;
+    margin-bottom: 5vh;
+    position: relative;
 
 }
 
-.hero .intro span {
+.hero .intro #name span {
     font-weight: bold;
     color: red;
     position: relative;
     display: inline-block;
 }
 
-.hero .intro span {
+.hero .intro #name span {
     position: relative;
     /* Needed for ::after to be positioned correctly */
     display: inline-block;
 }
 
-.hero .intro span::after {
+.hero .intro #name span::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -164,7 +163,7 @@ nav .hireMe button span {
     height: 30px;
     width: 30px;
     border-radius: 50vw;
-    background-image: url('rocket.png');
+    background-image: url('/img/rocket.png');
     /* Corrected path */
     background-size: cover;
     background-repeat: no-repeat;
@@ -174,7 +173,7 @@ nav .hireMe button span {
 
 @keyframes underline {
     to {
-        left: 280px;
+        left: 380px;
         transform: translateX(100%) rotate(0deg);
     }
 }
@@ -183,7 +182,7 @@ nav .hireMe button span {
 .hero .intro button {
     margin: 2pc 0px 0px 0px;
     padding: .6vw 1.6vw;
-    background-color:  #49c5b6;
+    background-color: #49c5b6;
     border: none;
     border-radius: 1pc;
     font-size: 1vw;
@@ -192,22 +191,292 @@ nav .hireMe button span {
     font-weight: 600;
 }
 
+
+.hero .intro img{
+    position: absolute;
+    height: 80px;
+    top: 0;
+    right: 30px;
+    transform: scaleX(-1);
+}
+
+.typewriter {
+    --blue: #5C86FF;
+    --blue-dark: #275EFE;
+    --key: #fff;
+    --paper: #EEF0FD;
+    --text: #D3D4EC;
+    --tool: #FBC56C;
+    --duration: 3s;
+    position: relative;
+    -webkit-animation: bounce05 var(--duration) linear infinite;
+    animation: bounce05 var(--duration) linear infinite;
+    margin-top: 20px;
+}
+
+.typewriter .slide {
+    width: 92px;
+    height: 20px;
+    border-radius: 3px;
+    margin-left: 14px;
+    transform: translateX(14px);
+    background: linear-gradient(var(--blue), var(--blue-dark));
+    -webkit-animation: slide05 var(--duration) ease infinite;
+    animation: slide05 var(--duration) ease infinite;
+}
+
+.typewriter .slide:before,
+.typewriter .slide:after,
+.typewriter .slide i:before {
+    content: "";
+    position: absolute;
+    background: var(--tool);
+}
+
+.typewriter .slide:before {
+    width: 2px;
+    height: 8px;
+    top: 6px;
+    left: 100%;
+}
+
+.typewriter .slide:after {
+    left: 94px;
+    top: 3px;
+    height: 14px;
+    width: 6px;
+    border-radius: 3px;
+}
+
+.typewriter .slide i {
+    display: block;
+    position: absolute;
+    right: 100%;
+    width: 6px;
+    height: 4px;
+    top: 4px;
+    background: var(--tool);
+}
+
+.typewriter .slide i:before {
+    right: 100%;
+    top: -2px;
+    width: 4px;
+    border-radius: 2px;
+    height: 14px;
+}
+
+.typewriter .paper {
+    position: absolute;
+    left: 24px;
+    top: -26px;
+    width: 40px;
+    height: 46px;
+    border-radius: 5px;
+    background: var(--paper);
+    transform: translateY(46px);
+    -webkit-animation: paper05 var(--duration) linear infinite;
+    animation: paper05 var(--duration) linear infinite;
+}
+
+.typewriter .paper:before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    top: 7px;
+    border-radius: 2px;
+    height: 4px;
+    transform: scaleY(0.8);
+    background: var(--text);
+    box-shadow: 0 12px 0 var(--text), 0 24px 0 var(--text), 0 36px 0 var(--text);
+}
+
+.typewriter .keyboard {
+    width: 120px;
+    height: 56px;
+    margin-top: -10px;
+    z-index: 1;
+    position: relative;
+}
+
+.typewriter .keyboard:before,
+.typewriter .keyboard:after {
+    content: "";
+    position: absolute;
+}
+
+.typewriter .keyboard:before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 7px;
+    background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+    transform: perspective(10px) rotateX(2deg);
+    transform-origin: 50% 100%;
+}
+
+.typewriter .keyboard:after {
+    left: 2px;
+    top: 25px;
+    width: 11px;
+    height: 4px;
+    border-radius: 2px;
+    box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key), 60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key), 22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key), 60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+    -webkit-animation: keyboard05 var(--duration) linear infinite;
+    animation: keyboard05 var(--duration) linear infinite;
+}
+
+@keyframes bounce05 {
+
+    85%,
+    92%,
+    100% {
+        transform: translateY(0);
+    }
+
+    89% {
+        transform: translateY(-4px);
+    }
+
+    95% {
+        transform: translateY(2px);
+    }
+}
+
+@keyframes slide05 {
+    5% {
+        transform: translateX(14px);
+    }
+
+    15%,
+    30% {
+        transform: translateX(6px);
+    }
+
+    40%,
+    55% {
+        transform: translateX(0);
+    }
+
+    65%,
+    70% {
+        transform: translateX(-4px);
+    }
+
+    80%,
+    89% {
+        transform: translateX(-12px);
+    }
+
+    100% {
+        transform: translateX(14px);
+    }
+}
+
+@keyframes paper05 {
+    5% {
+        transform: translateY(46px);
+    }
+
+    20%,
+    30% {
+        transform: translateY(34px);
+    }
+
+    40%,
+    55% {
+        transform: translateY(22px);
+    }
+
+    65%,
+    70% {
+        transform: translateY(10px);
+    }
+
+    80%,
+    85% {
+        transform: translateY(0);
+    }
+
+    92%,
+    100% {
+        transform: translateY(46px);
+    }
+}
+
+@keyframes keyboard05 {
+
+    5%,
+    12%,
+    21%,
+    30%,
+    39%,
+    48%,
+    57%,
+    66%,
+    75%,
+    84% {
+        box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key), 60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key), 22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key), 60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+    }
+
+    9% {
+        box-shadow: 15px 2px 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key), 60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key), 22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key), 60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+    }
+
+    18% {
+        box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key), 60px 2px 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key), 22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key), 60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+    }
+
+    27% {
+        box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key), 60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key), 22px 12px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key), 60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+    }
+
+    36% {
+        box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key), 60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key), 22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 12px 0 var(--key), 60px 12px 0 var(--key), 68px 12px 0 var(--key), 83px 10px 0 var(--key);
+    }
+
+    45% {
+        box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key), 60px 0 0 var(--key), 75px 0 0 var(--key), 90px 2px 0 var(--key), 22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key), 60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+    }
+
+    54% {
+        box-shadow: 15px 0 0 var(--key), 30px 2px 0 var(--key), 45px 0 0 var(--key), 60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key), 22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key), 60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+    }
+
+    63% {
+        box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key), 60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key), 22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key), 60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 12px 0 var(--key);
+    }
+
+    72% {
+        box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 2px 0 var(--key), 60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key), 22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key), 60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+    }
+
+    81% {
+        box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key), 60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key), 22px 10px 0 var(--key), 37px 12px 0 var(--key), 52px 10px 0 var(--key), 60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+    }
+}
+
 .skill_outbox {
     width: 100%;
-    height: 100vh;
-    padding: 0px 100px;
+    height: 90vh;
+    padding: 0px 20px;
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
 
 }
-
+.skill_outbox img{
+    height: 90vh;
+    filter: drop-shadow(0 0 100px #5c5656);
+}
 .skill {
-    width: 100%;
+    width: 60%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, auto);
-    gap: 5vw 12vw;
+    gap: 5vw 0vw;
     margin-top: 20px;
 }
 
@@ -270,47 +539,58 @@ nav .hireMe button span {
 }
 
 .skill .skill_card:hover {
-    transform:scale(1.2);
+    transform: scale(1.2);
     filter: drop-shadow(0 0 10px #ffffff);
 }
 
 
-.education-section-outer{
-    height: 100vh;
+
+#project {
     width: 100%;
-    background-color: black;
+    height: 100vh;
+    padding: 40px;
+    margin-top: 10em;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap; /* responsive */
 }
 
-.education-section{
-    height: 80%;
-    width: 80%;
-    background-image: url(projects.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 80%;
-    /* background-color: rgb(211, 211, 211); */
-    border-radius: 1vw;
-    box-shadow: 0px 0px 50px rgb(148, 125, 125);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+#project .dance img {
+    height: 80vh;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.855));
 }
 
-.education-section-outer .education-section .edu_class{
-    height: 50%;
+
+#project .card {
+    min-height: 600px; /* Responsive height */
     width: 30%;
-    text-align: center;
-    padding:20px 0px 20px 0px;
-    background-color: rgba(255, 255, 255, 0.445);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    padding: 1em;
+    border-radius: 1em;
+    filter: drop-shadow(0 0 10px rgba(169, 169, 169, 0.501));
 }
 
-.education-section-outer .education-section .edu_class h1{
-    color: black !important
+
+#project #card1 {
+    background-image: url(/project_card/tbpc.png);
 }
-.education-section-outer .education-section .edu_class h1 sup{
-    color: red;
-    font-size: small;
+
+#project #card2 {
+    background-image: url(/project_card/tbpc.png); /* or a different image */
+}
+#project #card3 {
+    background-image: url(/project_card/tbpc.png); /* or a different image */
+}
+
+#project .card .text {
+    background-color: #ada9a962;
+    padding: 8px;
+    text-align: justify;
+    border-radius: 10px;
 }
